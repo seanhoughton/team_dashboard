@@ -15,7 +15,7 @@ class GraphiteUrlBuilder
     query << "from=#{CGI.escape(format(from))}"
     query << "until=#{CGI.escape(format(to))}"
 
-    svg_params = ["format=svg", "hideGrid=true", "hideLegend=true", "width=#{options[:width]}", "height=#{options[:height]}"]
+    svg_params = ["fgcolor=999999", "format=png", "hideGrid=true", "hideLegend=false", "width=#{options[:width]}", "height=#{options[:height]}"]
     query += svg_params
 
     "#{@base_url}/render?#{query.join('&')}"
